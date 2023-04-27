@@ -1,0 +1,54 @@
+
+Excercice : Créer une API pour définir une ville grace à un code postal :
+
+1) Je vais sélectionner l'élément HTML du formulaire qui a l'attribut "role=search" grace  à querySelector et on l'a stocke dans la variable exo
+
+
+2) Je crée une variable avec l'url avec l'API Geo qui permettra de récupérer les données. On choisira les informations pertinentes : commune et code postal
+
+
+
+3) Je crée une variable pour transformer le format en JSON. Cela veut dire que les informations seront envoyées en format JSON.
+
+
+4) Je crée des constantes une pour ville et une pour code postal avec la méthode document.getElementbyId (en ayant auparavant créé des ID dans mon HTML) cela permettra de modifier la page HTML avec les informations sur la ville et le code postal.
+
+
+5) Je crée une constante pour mon bouton avec le même procédé que pour la partie 4.
+
+6) Je crée un addEventListener sur mon formulaire et dans l'élément "submit" cela me permettra lors du clic de crée une action. De plus mon preventDefault permet d'attendre la saisie de l'utilisateur pour exécuter le code.
+
+
+7)Je fais de même avec l'élément "click", addEventListener permet de créé une action lorsque l'on clic.
+
+
+8) Dans la fonction de rappel, on récupérons la valeur de l'élément code grace à this.value
+
+
+8Bis)Construire l'URL de l'API avec la valeur
+    const url = apiUrl + postalV + format;
+
+8) On utilise fetch pour effectuer la requête URL/API si réponse de l'URL la requête le transforme en en JSON.
+
+9)Le then permet de transformer l'API en données lisible et est retourné sur chaque each de chaque option.
+ 
+
+9) Vide l'historique des villes recherchées.
+        listeVilles.innerHTML = "";
+
+    data.forEach(function (value) {
+          const option = document.createElement("option");
+
+10)Création d'un élément option
+          option.value = value.nom;
+          listeVilles.appendChild(option);
+        });
+
+11) Permet d'afficher l'erreur dans la console 
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+});
+
+
