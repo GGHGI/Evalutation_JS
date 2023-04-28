@@ -25,15 +25,16 @@ postal.addEventListener("input", function () {
       .then((response) => response.json())
       .then((data) => {
         listeVilles.innerHTML = "";
-        data.forEach(function (value) {
-          listeVilles.selectedIndex = 0;
+        data.forEach(function (value, index) {
           const option = document.createElement("option");
           option.value = value.nom;
+
+          if (index == 0) {
+            document.querySelector("#ville").setAttribute("value", value.nom);
+          }
+
           listeVilles.appendChild(option);
         });
-        if (data.length > 0) {
-          listeVilles.selectedIndex = 0;
-        }
       })
       .catch((error) => {
         console.error(error);

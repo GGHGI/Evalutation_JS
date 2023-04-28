@@ -7,7 +7,6 @@ Excercice : Créer une API pour définir une ville grace à un code postal :
 2) Je crée une variable avec l'url avec l'API Geo qui permettra de récupérer les données. On choisira les informations pertinentes : commune et code postal
 
 
-
 3) Je crée une variable pour transformer le format en JSON. Cela veut dire que les informations seront envoyées en format JSON.
 
 
@@ -26,7 +25,7 @@ Excercice : Créer une API pour définir une ville grace à un code postal :
 
 
 8Bis)Construire l'URL de l'API avec la valeur
-    const url = apiUrl + postalV + format;
+   
 
 8) On utilise fetch pour effectuer la requête URL/API si réponse de l'URL la requête le transforme en en JSON.
 
@@ -34,20 +33,11 @@ Excercice : Créer une API pour définir une ville grace à un code postal :
  
 
 9) Vide l'historique des villes recherchées.
-        listeVilles.innerHTML = "";
-
-    data.forEach(function (value) {
-          const option = document.createElement("option");
-
+   
 10)Création d'un élément option
-          option.value = value.nom;
-          listeVilles.appendChild(option);
-        });
-
+     
 11) Permet d'afficher l'erreur dans la console 
-      .catch((error) => {
-        console.error(error);
-      });
+     
   }
 });
 

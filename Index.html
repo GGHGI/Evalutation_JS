@@ -11,7 +11,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" type="text/css" href="Index.css" />
-    <script type="text/javascript" src="index.js" defer></script>
+    <script type="text/javascript" src="feuil.js" defer></script>
     <title>evaluation js</title>
   </head>
   <body>
@@ -21,7 +21,7 @@
 
     <div class="container">
       <h2 class="info fs-5 text-uppercase mt-5">informations client :</h2>
-      <form>
+      <form role="search">
         <fieldset>
           <legend class="fs-6">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde vel
@@ -36,22 +36,33 @@
             <input
               type="search"
               class="form-control bg-light"
-              id="code"
+              id="postal"
+              maxlength="5"
               name="query"
               placeholder="Code postale"
               autocomplete="on"
             />
           </div>
+          <div style="display: none" ; id="errormessage"></div>
+
+          <br />
+          <button type="submit" class="btn btn-primary">Envoyer</button>
+          <button type="submit" class="btn btn-primary" id="effacer">
+            Effacer l'historique
+          </button>
+          <br />
           <br />
           <div class="form-group">
             <label for="textarea">Votre ville :</label>
             <input
+              list="listevilles"
               type="text"
               class="form-control bg-light"
               id="ville"
               placeholder="Ville"
               autocomplete="on"
             />
+            <datalist id="listevilles"></datalist>
           </div>
         </fieldset>
       </form>
